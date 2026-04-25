@@ -1,4 +1,4 @@
-const API = 'http://localhost:5000/api';
+const API = 'https://wumpus-agent-585.onrender.com/api';
 
 let state = null;
 let autoRunInterval = null;
