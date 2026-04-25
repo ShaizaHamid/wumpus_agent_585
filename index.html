@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Wumpus World – Logic Agent</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+    <header>
+      <h1>🏹 Wumpus World</h1>
+      <p class="subtitle">Knowledge-Based Agent with Propositional Logic & Resolution Refutation</p>
+    </header>
+
+    <div id="setup-panel">
+      <div class="setup-card">
+        <h2>Configure World</h2>
+        <div class="input-row">
+          <label>Rows <input type="number" id="inp-rows" value="4" min="2" max="10"/></label>
+          <label>Cols <input type="number" id="inp-cols" value="4" min="2" max="10"/></label>
+        </div>
+        <button id="btn-new" class="btn-primary">Start New Game</button>
+      </div>
+    </div>
+
+    <div id="game-panel" class="hidden">
+      <div id="left-col">
+        <div id="grid-container"></div>
+        <div id="legend">
+          <span class="leg-item"><span class="dot green"></span>Safe / Visited</span>
+          <span class="leg-item"><span class="dot yellow"></span>Safe Unvisited</span>
+          <span class="leg-item"><span class="dot gray"></span>Unknown</span>
+          <span class="leg-item"><span class="dot red"></span>Danger (revealed)</span>
+          <span class="leg-item"><span class="dot blue"></span>Agent</span>
+          <span class="leg-item"><span class="dot gold"></span>Gold</span>
+        </div>
+        <div id="controls">
+          <button id="btn-auto" class="btn-secondary">▶ Auto Step</button>
+          <button id="btn-auto-run" class="btn-secondary">⏩ Auto Run</button>
+          <button id="btn-restart" class="btn-outline">↺ Restart</button>
+        </div>
+      </div>
+
+      <div id="right-col">
+        <div class="metric-card" id="card-percepts">
+          <h3>📡 Current Percepts</h3>
+          <div id="percept-list"></div>
+        </div>
+        <div class="metric-card">
+          <h3>📊 Metrics</h3>
+          <div class="metric-row"><span>Inference Steps</span><span id="m-steps" class="metric-val">0</span></div>
+          <div class="metric-row"><span>Cells Visited</span><span id="m-visited" class="metric-val">0</span></div>
+          <div class="metric-row"><span>Safe Cells Found</span><span id="m-safe" class="metric-val">0</span></div>
+          <div class="metric-row"><span>Agent Position</span><span id="m-pos" class="metric-val">—</span></div>
+          <div class="metric-row"><span>Gold</span><span id="m-gold" class="metric-val">Not found</span></div>
+        </div>
+        <div class="metric-card">
+          <h3>🧠 KB Status</h3>
+          <div id="kb-status"></div>
+        </div>
+        <div class="metric-card">
+          <h3>📜 Event Log</h3>
+          <div id="event-log"></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="overlay" class="hidden">
+      <div id="overlay-box">
+        <div id="overlay-icon"></div>
+        <h2 id="overlay-title"></h2>
+        <p id="overlay-msg"></p>
+        <button id="btn-overlay-restart" class="btn-primary">Play Again</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
