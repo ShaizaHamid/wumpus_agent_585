@@ -1,4 +1,4 @@
-# Wumpus World – Dynamic Logic Agent (AI2002 Assignment 6)
+# Wumpus World – Dynamic Logic Agent
 
 A Knowledge-Based Agent that navigates a Wumpus World grid using **Propositional Logic** and **Resolution Refutation**.
 
